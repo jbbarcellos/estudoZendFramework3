@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/src/Model/Aluno.php</file>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/view/aluno/aluno/index.phtml</file>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/src/Form/AlunoForm.php</file>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/view/aluno/aluno/add.phtml</file>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/view/aluno/aluno/delete.phtml</file>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/config/module.config.php</file>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/src/Controller/AlunoController.php</file>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/src/Model/AlunoTable.php</file>
+            <file>file:/home/administrador/NetBeansProjects/ProjectZend/module/Aluno/view/aluno/aluno/edit.phtml</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,19 @@
+<?php
+$title = 'Delete Student';
+$this->headTitle($title)->setTranslatorEnabled(false);
+?>
+
+<h1><?=$this->escapeHtml($title)?></h1>
+
+<p>
+    Você deseja realmente excluir "<?=$this->escapeHtml($aluno->getFirstname())?>"?
+</p>
+
+
+<form method="POST" action="<?=$this->url('aluno',['action'=>'delete','id'=>$id])?>">
+      <div class="form-group">
+          <input type="hidden" name="id" value="<?=$aluno->getIdAluno()?>">
+          <input type="submit" name="del" value="Não" class="btn btn-success">
+          <input type="submit" name="del" value="Sim" class="btn btn-danger">
+    </div>
+</form>

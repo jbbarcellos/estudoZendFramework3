@@ -1,0 +1,68 @@
+<?php
+$title = 'Edit New Student';
+$this->headTitle($title)->setTranslatorEnabled(false);
+?>
+
+<h1><?=$this->escapeHtml($title)?></h1>
+
+<?php
+$form->setAttribute('action',$this->url('aluno',['action'=>'edit','id'=>$id]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+
+$idaluno = $this->form->get('idaluno');
+$firstname = $this->form->get('firstname');
+$lastname = $this->form->get('lastname');
+$email = $this->form->get('email');
+$password = $this->form->get('password');
+
+$firstname->setAttribute('class', 'form-control');
+$lastname->setAttribute('class', 'form-control');
+$email->setAttribute('class', 'form-control');
+$password->setAttribute('class', 'form-control');
+$firstname->setAttribute('autofocus', 'autofocus');
+
+$submit = $this->form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary btn-lg');
+
+
+
+?>
+
+<div class="form-group">
+    <div class="col-md-6">
+        <?=$this->formLabel($firstname)?>
+        <?=$this->formElement($firstname)?>
+        <?=$this->formElementErrors()->render($firstname,['class'=>'help-block'])?>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-6">
+        <?=$this->formLabel($lastname)?>
+        <?=$this->formElement($lastname)?>
+        <?=$this->formElementErrors()->render($lastname,['class'=>'help-block'])?>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-6">
+        <?=$this->formLabel($email)?>
+        <?=$this->formElement($email)?>
+        <?=$this->formElementErrors()->render($email,['class'=>'help-block'])?>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-6">
+        <?=$this->formLabel($password)?>
+        <?=$this->formElement($password)?>
+        <?=$this->formElementErrors()->render($password,['class'=>'help-block'])?>
+    </div>
+</div>
+
+<div class="row">
+    <?=$this->formElement($submit)?>
+    <a href="<?=$this->url('aluno',['action'=>'index'])?>" class="btn btn-warning">Voltar</a>
+</div>
