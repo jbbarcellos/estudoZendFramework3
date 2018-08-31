@@ -3,7 +3,7 @@
 Repositório utilizado para estudo do Zend Framework 3
 Criado Modulo Aluno;
 Criado Formulário de Adição e Edição de Aluno;
-Criado CRUD (Create, read, update and delete) sobra a tabela aluno;
+Criado CRUD (Create, read, update and delete) sobre a tabela aluno;
 
 ## Arquivos de configuração de Banco de Dados
 
