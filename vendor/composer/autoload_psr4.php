@@ -15,6 +15,7 @@ return array(
     'Zend\\ServiceManager\\' => array($vendorDir . '/zendframework/zend-servicemanager/src'),
     'Zend\\Serializer\\' => array($vendorDir . '/zendframework/zend-serializer/src'),
     'Zend\\Router\\' => array($vendorDir . '/zendframework/zend-router/src'),
+    'Zend\\Paginator\\' => array($vendorDir . '/zendframework/zend-paginator/src'),
     'Zend\\Mvc\\' => array($vendorDir . '/zendframework/zend-mvc/src'),
     'Zend\\ModuleManager\\' => array($vendorDir . '/zendframework/zend-modulemanager/src'),
     'Zend\\Loader\\' => array($vendorDir . '/zendframework/zend-loader/src'),

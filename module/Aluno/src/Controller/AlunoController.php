@@ -11,6 +11,9 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Aluno\Form\AlunoForm;
 use Aluno\Model\Aluno;
+use Zend\Paginator\Paginator;
+use Zend\Paginator\Adapter\DbSelect;
+use Zend\View\Helper\PaginationControl;
 
 class AlunoController extends AbstractActionController
 {
@@ -22,7 +25,14 @@ class AlunoController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewModel(['alunos' => $this->table->getAll()]);
+        
+        $pageAdapter = new DbSelect($this->table->getSelect(),$this->table->getSql());
+        $paginator = new Paginator($pageAdapter);
+        $paginator->setCurrentPageNumber($this->params()->fromRoute('page',1));
+        $paginator->setItemCountPerPage(15);
+        
+	return new ViewModel(array('paginator' => $paginator));
+        
     }
     
     public function addAction()

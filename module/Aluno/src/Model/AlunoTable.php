@@ -10,6 +10,7 @@ namespace Aluno\Model;
 
 use Zend\Db\TableGateway\TableGatewayInterface;
 use RuntimeException;
+use Zend\Db\Sql\Select;
 
 class AlunoTable {
     
@@ -52,6 +53,24 @@ class AlunoTable {
     
     public function deleteAluno($idaluno){
         $this->tableGateway->delete(['idaluno'=> (int) $idaluno]);
+    }
+    
+    /**
+     * @return Sql
+     */
+    public function getSql()
+    {
+        return $this->tableGateway->getSql();
+    }
+
+    /**
+     *
+     * @return \Zend\Db\Sql\Select
+     */
+    public function getSelect()
+    {
+        $select = new Select($this->tableGateway->getTable());
+        return $select;
     }
     
 }

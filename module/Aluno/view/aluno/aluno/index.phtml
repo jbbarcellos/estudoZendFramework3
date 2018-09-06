@@ -14,26 +14,42 @@
 	 		</thead>
                         <tbody>
                             <?php
-                            foreach ($alunos as $aluno):
+                            if(sizeof($this->paginator)):
+                                
+                            foreach ($paginator as $aluno):
+                                
                             ?>
                                 <tr>
-                                    <td><?=$aluno->getIdAluno()?></td>
-                                    <td><?=$aluno->getFirstName()?></td>
-                                    <td><?=$aluno->getLastName()?></td>
-                                    <td><?=$aluno->getEmail()?></td>
+                                    <td><?=$aluno[idaluno]?></td>
+                                    <td><?=$aluno[firstname]?></td>
+                                    <td><?=$aluno[lastname]?></td>
+                                    <td><?=$aluno[email]?></td>
                                     <td>
                                         <!--
-                                        <a href="<?=$this->url('aluno',['action'=>'edit', 'id'=>$aluno->getIdAluno()])?>" class="btn btn-link" >Edit</a> 
-                                        <a href="<?=$this->url('aluno',['action'=>'delete', 'id'=>$aluno->getIdAluno()])?>" class="btn-link-danger" >Delete</a>
+                                        <a href="<?=$this->url('aluno',['action'=>'edit', 'id'=>$aluno[idaluno]])?>" class="btn btn-link" >Edit</a> 
+                                        <a href="<?=$this->url('aluno',['action'=>'delete', 'id'=>$aluno[idaluno]])?>" class="btn-link-danger" >Delete</a>
                                         -->
-                                        <a href="<?=$this->url('aluno',['action'=>'edit', 'id'=>$aluno->getIdAluno()])?>" class="btn btn-link" ><i class="glyphicon glyphicon-edit"></i></a> 
-                                        <a href="<?=$this->url('aluno',['action'=>'delete', 'id'=>$aluno->getIdAluno()])?>" class="btn-link-danger" ><i class="glyphicon glyphicon-trash"></i></a>
+                                        <a href="<?=$this->url('aluno',['action'=>'edit', 'id'=>$aluno[idaluno]])?>" class="btn btn-link" ><i class="glyphicon glyphicon-edit"></i></a> 
+                                        <a href="<?=$this->url('aluno',['action'=>'delete', 'id'=>$aluno[idaluno]])?>" class="btn-link-danger" ><i class="glyphicon glyphicon-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php
                             endforeach;
                             ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td>Nenhum Aluno cadastrado.</td>
+                                </tr>
+                            <?php endif; ?>
                         </tbody>
 		</table>
 	</div>    
 </div>
+
+<ul>
+
+<?php
+
+echo $this->paginationControl($this->paginator,
+ 'Sliding',
+ '/script/pagination.phtml'); ?>

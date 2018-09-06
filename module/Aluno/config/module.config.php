@@ -15,14 +15,16 @@ return [
             'aluno' => [
                 'type' => Segment::class,
                 'options' => [
-                    'route'    => '/aluno[/:action[/:id]]',
+                    'route'    => '/aluno[/:action[/:id][/page/:page]]',
                     'constraints' =>[
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[0-9]+',
+                        'page' => '[0-9]+',
                     ],
                     'defaults' => [
                         'controller' => Controller\AlunoController::class,
                         'action'     => 'index',
+                        'page' => 1,
                     ],
                 ],
             ],
